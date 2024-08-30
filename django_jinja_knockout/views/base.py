@@ -426,6 +426,8 @@ class BaseFilterView(PageContextMixin):
     exclude_fields = None
     search_fields = None
     model = None
+    # Verbose names of fields
+    field_names = {}
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -441,8 +443,6 @@ class BaseFilterView(PageContextMixin):
         self.grid_fields = None
         # Filtered names of grid_fields (no excluded field names)
         self.grid_fields_attnames = None
-        # Verbose names of fields
-        self.field_names = {}
         self.allowed_sort_orders = None
         self.allowed_filter_fields = None
         self.search_fields = None
